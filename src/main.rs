@@ -1,3 +1,7 @@
+//mod print;
+// mod vars;
+mod datatypes;
+
 fn main() {
-    println!("Hello, world!");
+    vars::run();
 }
