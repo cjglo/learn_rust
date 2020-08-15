@@ -14,7 +14,7 @@ println!("{} {}", hello, hello2);
 let mut hello3 = String::from("Hello ");
 hello3.push('Q');
 
-println!("{}", hello3);
+println!("{}", hello3); 
 
 // Create string with capacity:
 let mut s = String::with_capacity(10);
