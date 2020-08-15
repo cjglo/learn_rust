@@ -16,5 +16,13 @@ hello3.push('Q');
 
 println!("{}", hello3);
 
-// Paused at 41:47
+// Create string with capacity:
+let mut s = String::with_capacity(10);
+s.push('a');
+
+println!("{}", s);
+
+// Assertion testing - VERY HELPFUL!!!!
+assert_eq!(1, s.len());  // Nothing will happen because length is one
+// Had this been wrong in throws an error and stops main
 }

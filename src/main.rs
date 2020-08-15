@@ -1,8 +1,11 @@
 // mod print;
 // mod vars;
 // mod datatypes;
-mod strings;
+// mod strings;
+// mod tuples;
+mod arrays;
+
 
 fn main() {
-    strings::run();
+    arrays::run();
 }
