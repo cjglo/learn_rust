@@ -27,7 +27,32 @@ impl Person
             last_name: last.to_string()
         }
     }
+
+    // Get Function
+    // Note: self is like keyword this
+    fn full_name(&self) -> String
+    {
+        // Format is like print, but doesn't print
+        // also again, notice no semicolon because we will return this value
+        format!("{} {}", self.first_name, self.last_name)
+    }
+
+    // Set Function
+    // mut added because it will be changed! So need to add that 
+    fn set_last_name(&mut self, last: &str)
+    {
+        self.last_name = last.to_string();
+    }
+
+    // Name to tuple
+    fn to_tuple(self) -> (String, String)
+    {
+        // Parathesis builds tuple, so build and return in same line
+        (self.first_name, self.last_name) // No semicolon because it is returning
+    }
 }
+
+
 
 
 pub fn run()
@@ -48,6 +73,11 @@ pub fn run()
 
     // println!("Color: {} {} {}", c.0, c.1, c.2);
 
-    let mut p = Person::new("John", "Doe");
-    println!("{} {}", p.first_name, p.last_name);
+    let mut p = Person::new("Mary", "Doe");  // Constrcuts
+    println!("{} {}", p.first_name, p.last_name); // Prints by attributes
+
+    p.set_last_name("Williams");  // sets new value
+    println!("Person {}", p.full_name()); // calls func to print
+
+
 }
