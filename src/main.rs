@@ -61,6 +61,10 @@ bouncer(person1_age);
 
 println!("\n\n\n\n");
 
+
+
+// Next Section: //////////////////////
+
 // Begins: Primitive Data Types & operations:
 
 let x: bool = true;
@@ -91,6 +95,29 @@ println!("{}, {}, {}", x, y, z);
 // Strings and Chars are unicode in Rust, so slightly different then C++
 // Will come back to this later
 
+
+// "as" keyword to cast types, there isn't implicit coecrcing of number types like C++
+
+let x = 34u8 as i8; // casts 34 unisgned to i8
+let y = 10 as f32; // casts 10 to 32 float
+let z = y as f64; // casts y to 64 float
+
+println!("{}, {}, {}", x, y, z); // NOTE: casting to smaller loses perscision and changes value
+
+
+// Operators:
+
+// Same operators as C++, but can be stricter
+// bitwise can only be applied to ints and logic (|| and &&) only applied to booleans
+// It has compound assignment but not ++ or --
+// ! can be applied to integers and inverts all bits (like ~ does in C++)
+
+
+
+
+// Next Section: //////////////////////
+
+// Begins Unique Pointers
 
 
 }
