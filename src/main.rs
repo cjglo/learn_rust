@@ -119,5 +119,28 @@ println!("{}, {}, {}", x, y, z); // NOTE: casting to smaller loses perscision an
 
 // Begins Unique Pointers
 
+// Pointers is one area where Rust and C++ are very different
+// Rust has memory safety by type checking
+// We will get into more of Rust ptrs later, for now its just basics
+
+let x = Box::new(75); // like C++ we can create a pointer to a variable
+// ^ here x is a pointer to a loation on the heap which contains 75
+
+// x has a type Box<isize>
+
+// unlike C++, no need to free or delete
+fn foo() -> i8
+{
+    let y = Box::new(10);
+    // y will go out of scope and be deleted once foo is done being called
+    *y
+}
+let y = foo();
+
+// These "owning" pointers can be deref by the *
+println!("{}, {}", *x, y);
+
+
+// as with primitives in Rust, owning pointers are immutable by default
 
 }
