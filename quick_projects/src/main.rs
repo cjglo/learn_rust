@@ -1,50 +1,26 @@
+
+
 fn main()
 {
-    // Practice of string ownership
+    let word = String::from("Ferris Rocks");
 
+    fn first_word(s: &String) -> &str 
+    {
+        let bytes = s.as_bytes();
 
-    {    
-        let s1 = String::from("hello"); // s1 is owner
+        for(i, &item) in bytes.iter().enumerate()
+        {
+            if item == b' ' 
+            {
+                return &s[..i];
+            }
+        }
 
-        take_owner(s1); // s1 no longer valid, now passed value is owner and goes out of scope after
+        &s[..]
+    }
 
-        let s2 = String::from("world");
+    let to_print = first_word(&word);
 
-        let _s3 = take_owner(s2);  // s2 is owner, ownership passed to value, then value passed to s3 which is no owner
-
-
-    } // s3 out of scope
-
-    
-
-     pub fn take_owner(word: String) -> String
-     {
-        word
-     }
-     println!("Complete!");
-
-
-
-
-
-     
-
-
-     // Now just gonna try multiple returns and delcarations with tuple return
-
-     let val = String::from("testing");
-
-     let (val2, num) = tuple_return(val);
-
-     println!("The word was {} and the secret num was {}", val2, num);
-
-
-     // function for tuple return
-     pub fn tuple_return(word: String) -> (String, u32)
-     {
-        println!("Inside function, wow!");
-
-        (word, 23)
-     }
+    println!("{:?}", to_print);
 
 }
