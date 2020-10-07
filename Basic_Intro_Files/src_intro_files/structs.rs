@@ -14,17 +14,19 @@ struct Person
 {
     first_name: String,
     last_name: String
+    place_birth: String
 }
 
 impl Person
 {
     // Constructor:
-    fn new(first: &str, last: &str) -> Person
+    fn new(first: &str, last: &str, place_birth: String) -> Person
     {
         Person
         {
             first_name: first.to_string(),
-            last_name: last.to_string()
+            last_name: last.to_string(),
+            place_birth,                    // Shorthand if paramter matches attribute, you can just write name and Rust will match values
         }
     }
 

@@ -1,4 +1,4 @@
-
+// Finishing Chapters 5 and 6: &str, Structs, 
 
 fn main()
 {
@@ -22,5 +22,10 @@ fn main()
     let to_print = first_word(&word);
 
     println!("{:?}", to_print);
+
+
+
+    // Entirely new section on structs starts here
+
 
 }
