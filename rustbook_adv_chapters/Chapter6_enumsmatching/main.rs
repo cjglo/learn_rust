@@ -42,15 +42,48 @@ fn main()
     }
 
 
+ 
 
 
 
 
 
 
+    // OPTION Starts here ------------------------------------------ very helpful
 
-    // Option Starts here ------------------------------------------ very helpful
+    let some_num = Some(5);
+    let some_string = Some("a string");
+
+    let absent_num: Option<i32> = None; // Must include type since can't be inferred
+
+
+    let x = 3; 
+
+    // This below will not compile! It is how rust makes sure you handle Option cases with both Some and None
+    // let sum = x + some_num;
+
+    // Option is what you can use besides nullptr
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+    // Other topics herer:
+
+    // Matching and "if let" both here
+
+    // check chapter for details, both are straight forward
+
+    // Only complex part of match is "binding" which just works with Enums with an (attahced data type), letting you use that 
+    // extra data type in arm
 
 }
