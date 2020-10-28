@@ -69,5 +69,37 @@ fn main()
     let s3 = format!("{}-{}", s1, s2); // Note: format doesn't take ownership so all still allowed
 
     println!("{}", s3);
+
+    // Can't index a string because Rust uses UTF so one character may be many bytes
+    // best way to iterate over a string is to use .chars()
+    for c in "word".chars()
+    {
+        println!("{}", c);
+    }
+
+    // .bytes() returns each byte, if that is needed
+
+
+
+
+
+    // 3
+    // HASH MAPS -----------------------------------------
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 50);
+
+    // can also do it from tuples if tuple has key and value
+    // It is a little complicated so look it up if doing it
+
+
+
+    // Retrieving 
+    let team_name = String::from("Blue");
+    let current_score = scores.get(&team_name); // Returns Some(&50), if not found returns None
+    
+
+    
     
 }
