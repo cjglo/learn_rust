@@ -97,9 +97,5 @@ fn main()
 
     // Retrieving 
     let team_name = String::from("Blue");
-    let current_score = scores.get(&team_name); // Returns Some(&50), if not found returns None
-    
-
-    
-    
+    let current_score = scores.get(&team_name); // Returns Some(&50), if not found returns None    
 }
