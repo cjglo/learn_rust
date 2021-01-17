@@ -200,7 +200,28 @@ fn main()
 	}
 
 
-	// can also return types with traits
-	// cont next time (pafe 188)....
+	// practice from page 190
+
+	fn largest<T: PartialOrd + Copy>(list: &[T]) -> T
+	{
+		let mut largest = list[0];
+		for &item in list.iter()
+		{
+			if largest < item
+			{
+				largest = item;
+			}
+		}
+
+		largest
+	}
+
+	let example = [2, 3, 4, 9, 5];
+
+	println!("{}", largest(&example));
+	println!("----");
+
+	
+
 
 }
