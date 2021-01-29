@@ -45,7 +45,16 @@ mod tests {
         assert_ne!(6, adds_two(1));
     }
 
+    // will mention "(left == right)" in error message if above failed, signalling 
+    // what condtion in the above caused the panic (allowing to see why test panicked)
+
+    // called left and right so that can change the order and it won't matter
+
+    // Note: Must impl PartialEq and Debug Traits for types to use assert_eq and _ne
+
     
+
+
 
 
 }
