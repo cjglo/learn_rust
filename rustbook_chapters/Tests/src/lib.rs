@@ -57,6 +57,7 @@ mod tests {
 
     // can also write custom fail messages, like printing the result after a fail    
 	#[test]
+	#[ignore] // placed ignore so this will be ignored and tests directory is tested (uncomment for this ex)
 	fn greeting() {
 		let result = "Hello, John!";
 		assert!(result.contains("Matt"), 
