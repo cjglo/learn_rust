@@ -1,1 +1,0 @@
-C:\Users\gallo\OneDrive\Documents\github\learn_rust\rand_projs\minigrep\target\debug\minigrep.exe: C:\Users\gallo\OneDrive\Documents\github\learn_rust\rand_projs\minigrep\src\lib.rs C:\Users\gallo\OneDrive\Documents\github\learn_rust\rand_projs\minigrep\src\main.rs
