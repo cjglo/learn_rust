@@ -1,8 +1,7 @@
 // Chapter 12 - Command Line Project
-
 use std::env;
-use std::fs;
 use std::process;
+use minigrep::Config;
 
 
 fn main() {
@@ -18,51 +17,14 @@ fn main() {
         process::exit(1);
     });
 
-    println!("Searching for {}", config.query);
-    println!("inside of {}", config.filename);
-
-    run(config);
-
-}
-
-// running configuration and printing result
-fn run(config: Config) {
-
-    let contents = fs::read_to_string(config.filename)
-        .expect("Something went wrong reading the file!");
-
-    println!("Contents: \n {} \n", contents);
     
-}
+    
 
+    if let Err(e) = minigrep::run(config) {
+        println!("Application Error: {}", e);
 
-
-
-// configure struct
-struct Config {
-    query: String,
-    filename: String,
-}
-
-impl Config {
-
-    // parsing logic for commands
-    fn new(args: &[String]) -> Result<Config, &'static str> {
-
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
-
-        let query = args[1].clone();
-        let filename = args[2].clone();
-
-        Ok(
-            Config {
-            query,
-            filename,
-            }
-        )
-
+        process::exit(1);
     }
 
 }
+
