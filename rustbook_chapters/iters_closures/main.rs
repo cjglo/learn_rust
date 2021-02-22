@@ -112,3 +112,30 @@ fn generate_workout(intensity: u32, random_number: u32) {
     }
 
 }
+
+
+// More on CLosures:
+// another thing closures can do is capture their envirnment, aka use variables in their envirnment that are not parameters
+
+fn capture_example() {
+    let x = 4;
+
+    let equal_to_x = |z| z == x;
+
+    let y = 4;
+
+    equal_to_x(y); // if you did assert!() this would pass, x is saved despite not being a parameter
+
+    // Also note: Fn traits have three options
+    // FnOnce -> take ownership
+    // FnMut -> mut & 
+    // Fn -> const &
+
+
+    // could use FnOnce by using "move" in closure to take ownership
+    let equal_to_y = move |num| num == y; // y is taken because move keyword in defintion
+
+    // y can no longer be used here
+}
+
+
