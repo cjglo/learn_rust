@@ -1,1 +1,21 @@
-// Most involes reading, so this may remain blank for a while before start coming in examples
+// building a cons list to use Box pointer in way that is relevant for
+
+use crate::List::{Cons, Nil};
+
+
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
+}
+
+fn main() {
+
+    let list = Cons(1, 
+        Box::new(Cons(2, 
+            Box::new(Cons(3,
+                Box::new(Nil))))));
+
+    
+
+
+}
