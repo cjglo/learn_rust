@@ -133,3 +133,6 @@ fn example_rc_ref() {
     // ! memory is NEVER cleaned! So be careful with Rc<RefCell<T>>!!!!
 
 }
+
+// * We continue this with Weak<T> which is a weak reference that helps prevent the above memory leak issue
+// * THis will be done in tree folder
