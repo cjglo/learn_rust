@@ -14,7 +14,7 @@ struct Node {
 fn example() {
     let leaf = Rc::new(Node { value:3, children: RefCell::new(vec![]) });
 
-    let branch = Rc::new(Node { value:value: 5,
+    let branch = Rc::new(Node { value: 5,
     children: RefCell::new(vec![Rc::clone(&leaf)]),
     })
 
@@ -26,6 +26,6 @@ fn example() {
     // We need weak cause otherwise circular reference would exist 
 
     
-
+    // ! Continue to the tree_w_weak_ref to see how to imporve this
 
 }
