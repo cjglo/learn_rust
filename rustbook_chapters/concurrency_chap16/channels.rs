@@ -6,6 +6,9 @@ fn main() {
 
     thread::spawn(move || {
         let val = String::from("hi");
-        tx.send(val).unwrap();
+        // tx.send(val).unwrap();
     });
+
+    let recieved: String = rx.recv().unwrap();
+    println!("Got: {}", recieved);
 }

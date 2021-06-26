@@ -2,7 +2,7 @@
 use std::thread;
 use std::time::Duration;
 
-fn main() {
+fn oldmain() {
 
     // spawn new threads with thread::spawn
     let handle = thread::spawn(|| {
