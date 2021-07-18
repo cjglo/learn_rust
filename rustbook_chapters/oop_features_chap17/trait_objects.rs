@@ -55,6 +55,8 @@ fn main() {
                 width: 10,
                 height: 10,
                 label: String::from("OK"),
+
+            
             })
         ]
     };
