@@ -15,7 +15,7 @@ fn main() {
 
 	let post = post.approve();
 
-	assert_eq!("I ate a salad for lunch today", post.contents());
+	assert_eq!("I ate a salad for lunch today", post.content());
 }
 
 
@@ -31,7 +31,7 @@ impl Post {
 
 	pub fn new() -> DraftPost {
 		DraftPost {
-			contents: String::new(),
+			content: String::new(),
 		}
 	}	
 
@@ -49,7 +49,7 @@ impl DraftPost {
 		self.content.push_str(text);
 	}
 
-	pub n request_review(self) -> PendingReviewPost {
+	pub fn request_review(self) -> PendingReviewPost {
 		PendingReviewPost {
 			content: self.content,
 		}
