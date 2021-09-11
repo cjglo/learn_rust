@@ -107,7 +107,6 @@ impl State for PendingReview {
 	}
 }
 
-
 struct Published {}
 
 impl State for Published {
