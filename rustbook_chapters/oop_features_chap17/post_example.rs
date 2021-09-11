@@ -39,14 +39,14 @@ impl Post {
     }
 	
     pub fn content(&self) -> &str {
-	self.state.as_ref().unwrap().content(&self);    
+	self.state.as_ref().unwrap().content(&self)    
     }
 
-   pub fn request_review() {
+   pub fn request_review(&mut self) {
 
 	if let Some(s) = self.state.take() {
 		
-		self.state = Some(s.request_review())
+		self.state = Some(s.request_review());
 		
 	}
    }
@@ -56,7 +56,7 @@ impl Post {
 
 	if let Some(s) = self.state.take() {
 
-		self.state = Some(s.approve())
+		self.state = Some(s.approve());
 	
 	}
 
@@ -68,7 +68,7 @@ trait State {
 	fn request_review(self: Box<Self>) -> Box<dyn State>;
 	fn approve(self: Box<Self>) -> Box<dyn State>;
 	
-	fn contents<'a>(&self, post: &'a Post) -> &'a str {
+	fn content<'a>(&self, post: &'a Post) -> &'a str {
 		""
 	}
 }
@@ -102,7 +102,7 @@ impl State for PendingReview {
 	}
 
 
-	fn approve(self: Box<self>) -> Box<dyn State> {\
+	fn approve(self: Box<Self>) -> Box<dyn State> {
 		Box::new(Published {})
 	}
 }
@@ -122,7 +122,6 @@ impl State for Published {
 
 
 	fn content<'a>(&self, post: &'a Post) -> &'a str {
-
 		&post.content
 	}
 
